@@ -127,6 +127,7 @@
         }
       });
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+
       let imagesCollection = [];
       if (activeTag === "all") {
         $(".item-column").each(function() {
@@ -138,8 +139,8 @@
         $(".item-column").each(function() {
           if (
             $(this)
-              .children("picture").children("img")
-              .data("gallery-tag") === activeTag
+              .children("picture")
+              .data().galleryTag === activeTag //Arrow tag
           ) {
             imagesCollection.push($(this).children("picture").children("img"));
           }
@@ -181,8 +182,8 @@
         $(".item-column").each(function() {
           if (
             $(this)
-              .children("picture").children("img")
-              .data("gallery-tag") === activeTag
+              .children("picture")
+              .data().galleryTag === activeTag
           ) {
             imagesCollection.push($(this).children("picture").children("img"));
           }
